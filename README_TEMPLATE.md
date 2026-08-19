@@ -4,16 +4,11 @@
 ---
 
 ## ⚙️ Project Type Flags
-> *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
 
-- [ ] Exploratory Data Analysis (EDA)
-- [ ] SQL Analysis / Querying
-- [ ] Dashboard / Data Visualization
-- [ ] Data Pipeline / ETL
-- [ ] Predictive Modelling / Machine Learning
-- [ ] Data Cleaning / Wrangling
-- [ ] End-to-End (multiple of the above)
-- [ ] Other: ___________
+- [x] Exploratory Data Analysis (EDA)
+- [x] Dashboard / Data Visualization
+- [x] Data Cleaning / Wrangling
+- [x] Excel
 
 ---
 
@@ -21,15 +16,14 @@
 1. [Project Overview](#1-project-overview)
 2. [Objectives](#2-objectives)
 3. [Project Scope & Tools](#3-project-scope--tools)
-4. [Data Workflow](#5-data-workflow)
-5. [Data Model & Schema](#6-data-model--schema)
-6. [Analysis & Metrics](#8-analysis--metrics)
-9. [Key Insights](#9-key-insights)
-10. [Recommendations](#10-recommendations)
-11. [Assumptions & Limitations](#11-assumptions--limitations)
-12. [Future Enhancements](#12-future-enhancements)
-13. [Deliverables](#13-deliverables)
-14. [Author](#14-author)
+4. [Data Workflow](#4-data-workflow)
+5. [Data Model & Schema](#5-data-model--schema)
+6. [Analysis & Metrics](#6-analysis--metrics)
+7. [Key Insights](#7-key-insights)
+8. [Recommendations](#8-recommendations)
+9. [Assumptions & Limitations](#9-assumptions--limitations)
+10. [Portfolio Summary](#10-portfolio-summary)
+11. [Author](#11-author)
 
 ---
 
@@ -57,8 +51,10 @@ The project produced an interactive Excel dashboard containing visualizations fo
   
 - **Secondary Objective 1:**
   Clean and standardize the raw customer dataset so that it could be used reliably for analysis.
+  
 - **Secondary Objective 2:**
   Compare bike purchasers and non-purchasers across income, commute distance, gender, and age groups.
+  
 - **Secondary Objective 3:**
   Build an interactive Excel dashboard that allows users to filter and explore customer segments.
 
@@ -151,7 +147,7 @@ The slicers were connected to the different PivotCharts so users could filter th
 
 ## 5. Data Model & Schema
 
-### Dataset / Table: `[name]`
+### Dataset : Bike Buyers
 
 | Field Name | Data Type | Description | Example Value |
 |------------|-----------|-------------|---------------|
@@ -224,107 +220,52 @@ This makes the dashboard more useful than looking at overall averages alone.
 
 ---
 
-## 10. Recommendations
+## 8. Recommendations
 
-<!--
-  Action-oriented. Addressed to a real audience.
-  Tied explicitly to the insight that supports each one.
-
-  WHAT GOOD LOOKS LIKE:
-  Priority: High
-  Recommendation: "Conduct a fulfilment audit for home goods deliveries
-                   in Region A - specifically investigating whether returns
-                   correlate with a particular warehouse, carrier, or SKU batch."
-  Based On: Insight 1 - return rate anomaly in Region A
-  Owner: Operations / Supply Chain team
-
-  WHAT TO AVOID:
-  ❌ "Improve the return rate."
-     (Not actionable. Doesn't say who, how, or where to start.)
-  ❌ "Further analysis is needed."
-     (This is a placeholder, not a recommendation.)
--->
 
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
-| High | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Medium | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Low | [Exploratory or longer-term suggestion] | [Insight it comes from] | [Who should act] |
+| High | Use customer segmentation when evaluating potential bike customers rather than relying only on overall averages. | Differences observed across education, region, marital status, age and purchase behavior | Marketing / Sales |
+| Medium | Investigate customers with commuting patterns that may make cycling relevant and compare their purchase behavior with other groups. | Commute-distance analysis | Marketing / Sales |
+| Low | Expand the dashboard with additional KPIs and customer segments as more data becomes available. | Current dashboard is primarily descriptive and uses a limited number of visualizations. | Data / Business Intelligence |
 
 ---
 
-## 11. Assumptions & Limitations
-
-<!--
-  WHAT GOOD LOOKS LIKE:
-  Assumption: "Transaction records were assumed to be complete for all five regions.
-               No validation was performed against source system record counts."
-  Limitation: "The analysis cannot distinguish between returns initiated by
-               the customer vs. returns initiated by the business (e.g., recalls).
-               If business-initiated returns are concentrated in Region A, the
-               return rate finding may reflect a policy decision, not a quality issue."
-
-  WHAT TO AVOID:
-  ❌ Leaving this section blank or writing "None known."
-     Every project has limitations. Documenting them is a sign of
-     analytical maturity - not a confession of failure.
--->
+## 9. Assumptions & Limitations
 
 ### Assumptions
-- [What did you treat as true without being able to verify?]
-- [What simplifications did you make for scope or feasibility?]
-- [What domain rules or definitions did you accept as given?]
+- The ID field was treated as an identifier for individual customers.
+- Duplicate records were treated as unnecessary duplicates and removed during cleaning.
+- M/S in marital status was interpreted as Married/Single.
+- M/F in gender was interpreted as Male/Female.
+- Age was grouped into broader brackets to make the dashboard easier to interpret.
+- The Purchased Bike field was treated as the primary outcome for the analysis.
+- The analysis assumes the available customer information is sufficiently accurate for descriptive exploration.
+
 
 ### Limitations
-- [What gaps exist in the data?]
-- [What analysis was out of scope but could affect interpretation?]
-- [What would a more rigorous version of this project include?]
-- [Are there known biases in the data source or collection method?]
-
-> *The goal here is pre-emptive Q&A. What would a thoughtful skeptic push back on? Document the answer here, before they ask.*
-
----
-
-## 12. Future Enhancements
-
-<!--
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Automate the monthly data pull from the POS export folder using
-      a scheduled Python script, replacing the current manual process."
-  ✅ "Expand the return rate analysis to include carrier-level data,
-      which was unavailable in this dataset but exists in the logistics system."
-
-  WHAT TO AVOID:
-  ❌ "Add a machine learning model."
-     (Vague, and disconnected from the actual findings of this project.)
-  ❌ Listing aspirational features that don't follow logically from the work.
--->
-
-- [ ] [Enhancement 1 - specific and traceable to a real gap in this project]
-- [ ] [Enhancement 2]
-- [ ] [Enhancement 3]
-- [ ] [Enhancement 4]
+- The dataset’s exact collection period is not specified in the transcript.
+- The source and methodology used to originally collect the customer data are not documented in detail.
+- The analysis is descriptive and does not establish that income, age, commute distance, or another characteristic causes someone to purchase a bike.
+- The dataset contains duplicate records, which required cleaning before analysis.
+- The project does not include sales value, product type, profit, marketing-channel data, or customer purchase history.
+- No statistical hypothesis testing or predictive modeling was performed.
+- The age brackets were manually defined for dashboard readability rather than being derived from a formal business or demographic standard.
 
 ---
 
-## 13. Deliverables
+## 10. Portfolio Summary
 
-| Deliverable | Description | Location |
-|-------------|-------------|----------|
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
+This project demonstrates an end-to-end Excel data analytics workflow, from raw-data preparation through cleaning, transformation, exploratory analysis, visualization, and dashboard development. The project shows practical skills in Excel formulas, data cleaning, PivotTables, PivotCharts, segmentation, slicers, and dashboard design, while also demonstrating the importance of presenting analytical findings in a way that is easy for a business user to understand.
 
 ---
 
-## 14. Author
+## 11. Author
 
-**[Your Name]**
-[Your role or title - current or target]
+**Adewole Fakoya**
+[Data Analyst]
 
-- 🔗 [LinkedIn URL]
-- 💼 [Portfolio or GitHub profile URL]
-- 📧 [Email - optional]
+- 🔗 [https://www.linkedin.com/in/adewole-fakoya-7484a5149]
 
 ---
 
